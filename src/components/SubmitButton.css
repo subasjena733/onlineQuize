@@ -1,0 +1,17 @@
+.button-group{
+    display: flex;
+    margin-top: 100px;
+}
+.prev-next-button{
+    display: inline-block;
+    margin: auto;
+}
+.prev-button{
+    margin-right: 10px;
+}
+.submit-button-container{
+    display: flex;
+    margin-top: 30px;
+    justify-content: end;
+    margin-right: 50px;
+}
