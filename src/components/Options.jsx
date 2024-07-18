@@ -5,6 +5,25 @@ function Options(props) {
   // console.log(props);
   let [ansList,setAnsList]=useState(Array(props.maxQns).fill("0"));
   let ans=ansList[props.qNo-1];
+  
+ 
+    function setOptions(){
+      if(ans=="a"){
+        document.getElementById("option-a").checked=true;
+      }else if(ans=="b"){
+        document.getElementById("option-b").checked=true;
+      }else if(ans=="c"){
+        document.getElementById("option-c").checked=true;
+      }else{
+        document.getElementById("option-a").checked=false;
+        document.getElementById("option-b").checked=false;
+        document.getElementById("option-c").checked=false;
+      }
+    }
+    //Checks wheather the element is mounted in document i.e on web page or   not oterwise we may get an error while seting its checked propery.(Altt available in ProjectOnlineQuize_Test2)
+    if(document.getElementById("option-a")){
+      setOptions();
+    }
   //----------------Event Handler---------------------
   function noteOption(event){
     // console.log(event);
@@ -38,6 +57,12 @@ function Options(props) {
     // console.log(ansList);
     props.onSave(ansList);
   }
+  function clearAns(){
+    ans="0";
+    ansList[props.qNo-1]=ans;
+    setAnsList(ansList);
+    setOptions();
+  }
   //----------------HTML------------------------------
   return (
     <div className='opn'>
@@ -55,7 +80,7 @@ function Options(props) {
       </div>
       <div className="save-clear-button">
         <button className='save-button' onClick={saveAns} >Save</button>
-        <button className='clear-button'>Clear</button>
+        <button className='clear-button' onClick={clearAns}>Clear</button>
       </div>
     </div>
   )

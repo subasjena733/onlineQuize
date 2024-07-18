@@ -3,18 +3,18 @@ import "./Question.css"
 import Options from './Options.jsx';
 function Question(props) {
   // console.log(props);
-  let ans="";
-  let [ansArray,setAnsArray]=useState(Array(props.maxQns).fill("0"));
-  if(document.getElementById("option-a"))
-  {
-    if(ansArray[props.qNo-1]=="a"){
-      document.getElementById("option-a").checked=true;
-    }else if(ansArray[props.qNo-1]=="b"){
-      document.getElementById("option-b").checked=true;
-    }else if(ansArray[props.qNo-1]=="c"){
-      document.getElementById("option-c").checked=true;
-    }
-  }
+  // let ans="";
+  // let [ansArray,setAnsArray]=useState(Array(props.maxQns).fill("0"));
+  // if(document.getElementById("option-a"))
+  // {
+  //   if(ansArray[props.qNo-1]=="a"){
+  //     document.getElementById("option-a").checked=true;
+  //   }else if(ansArray[props.qNo-1]=="b"){
+  //     document.getElementById("option-b").checked=true;
+  //   }else if(ansArray[props.qNo-1]=="c"){
+  //     document.getElementById("option-c").checked=true;
+  //   }
+  // }
   // let [ansList,setAnsList]=useState(Array(props.maxQns).fill(""));
   //----------Question and Option List--------------------------
   const qns_opns=[
@@ -57,8 +57,8 @@ function Question(props) {
   ];
 //-----------------Event Handler-----------------------
 function nextQn(ansList){
-  // console.log(ansList)
-  setAnsArray(ansList);
+  console.log(ansList)
+  // setAnsArray(ansList);
   props.nextQn();
 }
 //-----------------HTML--------------------------------

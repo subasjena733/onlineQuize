@@ -12,14 +12,14 @@ function Frame() {
         ansStatus.push(<button className="qn-no" onClick={qnButtonClickHandler} key={`q${i}`}>{i}</button>);
     };
     // console.log(ansStatus);
-    function resetOptions(){
-        // console.log(document.getElementById("option-a"));
-        // console.log(document.getElementById("option-b"));
-        // console.log(document.getElementById("option-c"));
-        document.getElementById("option-a").checked=false;
-        document.getElementById("option-b").checked=false;
-        document.getElementById("option-c").checked=false;
-    }
+    // function resetOptions(){
+    //     console.log(document.getElementById("option-a"));
+    //     console.log(document.getElementById("option-b"));
+    //     console.log(document.getElementById("option-c"));
+    //     document.getElementById("option-a").checked=false;
+    //     document.getElementById("option-b").checked=false;
+    //     document.getElementById("option-c").checked=false;
+    // }
     function nextQn(){
         if(qnNo==maxNoOfQns)
         {
@@ -29,7 +29,7 @@ function Frame() {
             // console.log(parseInt(qnNo)+1);
             setQnNo(qnNo+1);
         }
-        resetOptions();
+        // resetOptions();
     }
 //-------------------Event Handler--------------------------------
     function qnButtonClickHandler(event){
@@ -44,7 +44,7 @@ function Frame() {
         if(qnNo==1){
             setQnNo(maxNoOfQns);
         }
-        resetOptions();
+        // resetOptions();
     }
     function nextButtonClickHandler(){
         if(qnNo==maxNoOfQns)
@@ -55,7 +55,7 @@ function Frame() {
             // console.log(parseInt(qnNo)+1);
             setQnNo(qnNo+1);
         }
-        resetOptions();
+        // resetOptions();
     }
 //--------------------HTML-------------------------------------
   return (
